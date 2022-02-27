@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  background-color: #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.quote-wrap{
   display: flex;
   flex-direction: column;
+  background-color: #fff;
+  width: 800px;
+  padding: 2rem;
+  border-radius: 7px;
+  box-shadow: 1px -1px 25px 2px rgba(0,0,0,0.78);
+  -webkit-box-shadow: 1px -1px 25px 2px rgba(0,0,0,0.78);
+  -moz-box-shadow: 1px -1px 25px 2px rgba(0,0,0,0.78);
+}
+
+.quote-wrap> blockquote{
+  text-shadow: .5px .5px 3px #999;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.quote-wrap> blockquote p{
+  
+  font-size: 19px;
+  font-weight: 500;
+  margin-left: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quote-wrap> cite{
+  font-size: 17px;
+  text-shadow: .5px .5px 3px #999;
+  font-weight: 800;
+  margin-left: 1rem;
+}
+
+.quote-wrap> button{
+  margin-top: .5rem;
+  width: 50px;
+  padding: 1rem;
+  border-radius: 50%;
+  border: none;
+  box-shadow: .5px .5px 3px #999;
+}
+
+.quote-wrap> button> i{
+  color: #fff;
+  text-shadow: .5px .5px 3px #999;
+}
+
+.quote-wrap> button:hover{
+  cursor: pointer;
 }
