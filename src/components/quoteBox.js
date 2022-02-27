@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import quotes from "../db/quotes.json";
 import colors from "../db/colors.json"
+import Button from "./button";
 
 
 const random = ( json ) => {
@@ -21,8 +22,10 @@ const QuoteBox = () => {
         const randomColor = colors[ random( colors ) ]
         return randomColor.code.hex
     },
+
     // Create quote/author const
         newQuote = getRandomQuote(),
+        
     // Hooks
         [ actualColor, setNewColor ] = useState( getRandomColor ),
         [ actualQuote, setNewQuote ] = useState( newQuote.quote ),
@@ -44,17 +47,14 @@ const QuoteBox = () => {
                 <cite style={{color: `${ actualColor }` }}>
                     { actualAuthor }
                 </cite>
-
-                <button 
-                    onClick={ () => {
-                        setNewColor( getRandomColor )
-                        setNewQuote( newQuote.quote )
-                        setNewAuthor( newQuote.author )
-                    }}
-                    style={ {background: `${ actualColor }` } }
-                > 
-                    <i className="fa-solid fa-shuffle fa-xl"></i>
-                </button>
+                <Button
+                    setNewColor    = { setNewColor }
+                    setNewQuote    = { setNewQuote }
+                    setNewAuthor   = { setNewAuthor }
+                    getRandomColor = { getRandomColor }
+                    newQuote       = { newQuote }
+                    actualColor    = { actualColor }
+                />
             </div>
         </div>
     )
